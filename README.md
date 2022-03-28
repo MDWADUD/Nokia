@@ -14,3 +14,4 @@ Preview:
 
 ![Relational Table1](https://user-images.githubusercontent.com/43837530/160497775-aed62a2c-7a99-4cc4-868f-707ee61bb285.jpg)
 
+![Screen Shot 2022-03-28 at 6 38 23 PM](https://user-images.githubusercontent.com/43837530/160498586-2bb5dabd-2306-42c3-a754-da99bf98b6f7.png)

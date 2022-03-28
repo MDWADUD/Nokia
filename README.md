@@ -5,3 +5,4 @@ Visual Basic,
 MySQL 
 for product transaction, internal stock management system, annual revenue, product analysis, etc.
 
+Preview:

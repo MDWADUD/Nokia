@@ -1,0 +1,489 @@
+Option Compare Database
+
+Private Sub Command8_Click()
+On Error GoTo Err_Command8_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command8_Click:
+    Exit Sub
+
+Err_Command8_Click:
+    MsgBox Err.Description
+    Resume Exit_Command8_Click
+    
+End Sub
+Private Sub Command9_Click()
+On Error GoTo Err_Command9_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+
+Exit_Command9_Click:
+    Exit Sub
+
+Err_Command9_Click:
+    MsgBox Err.Description
+    Resume Exit_Command9_Click
+    
+End Sub
+Private Sub Command10_Click()
+On Error GoTo Err_Command10_Click
+
+
+    DoCmd.Close
+
+Exit_Command10_Click:
+    Exit Sub
+
+Err_Command10_Click:
+    MsgBox Err.Description
+    Resume Exit_Command10_Click
+    
+End Sub
+Private Sub Add_New_Receive_Click()
+On Error GoTo Err_Add_New_Receive_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Add_New_Receive_Click:
+    Exit Sub
+
+Err_Add_New_Receive_Click:
+    MsgBox Err.Description
+    Resume Exit_Add_New_Receive_Click
+    
+End Sub
+
+Private Sub Command62_Click()
+
+End Sub
+
+Private Sub Command63_Click()
+
+End Sub
+
+Private Sub Command64_Click()
+
+End Sub
+
+Private Sub Detail_Click()
+
+End Sub
+
+Private Sub Save_Receive_Click()
+On Error GoTo Err_Save_Receive_Click
+If Quantity = 0 Then
+MsgBox "Quantity Can't be zero!!!", , "Data Entry Error"
+Quantity.SetFocus
+Exit Sub:
+Else
+[Current Stock] = [Current Stock] + Quantity
+Receive = Receive + Quantity
+Quantity = Null
+
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+End If
+Exit_Save_Receive_Click:
+    Exit Sub
+
+Err_Save_Receive_Click:
+    MsgBox Err.Description
+    Resume Exit_Save_Receive_Click
+    
+End Sub
+Private Sub Close_Click()
+On Error GoTo Err_Close_Click
+
+
+    DoCmd.Close
+
+Exit_Close_Click:
+    Exit Sub
+
+Err_Close_Click:
+    MsgBox Err.Description
+    Resume Exit_Close_Click
+    
+End Sub
+Private Sub Command24_Click()
+On Error GoTo Err_Command24_Click
+
+
+    DoCmd.GoToRecord , , acPrevious
+
+Exit_Command24_Click:
+    Exit Sub
+
+Err_Command24_Click:
+    MsgBox Err.Description
+    Resume Exit_Command24_Click
+    
+End Sub
+Private Sub Command25_Click()
+On Error GoTo Err_Command25_Click
+
+
+    DoCmd.GoToRecord , , acNext
+
+Exit_Command25_Click:
+    Exit Sub
+
+Err_Command25_Click:
+    MsgBox Err.Description
+    Resume Exit_Command25_Click
+    
+End Sub
+Private Sub Command26_Click()
+On Error GoTo Err_Command26_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command26_Click:
+    Exit Sub
+
+Err_Command26_Click:
+    MsgBox Err.Description
+    Resume Exit_Command26_Click
+    
+End Sub
+Private Sub Command27_Click()
+On Error GoTo Err_Command27_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command27_Click:
+    Exit Sub
+
+Err_Command27_Click:
+    MsgBox Err.Description
+    Resume Exit_Command27_Click
+    
+End Sub
+Private Sub Command28_Click()
+On Error GoTo Err_Save_Receive_Click
+If Quantity = 0 Then
+MsgBox "Quantity Can't be zero!!!", , "Data Entry Error"
+Quantity.SetFocus
+Exit Sub:
+Else
+[Current Stock] = [Current Stock] + Quantity
+Receive = Receive + Quantity
+Quantity = Null
+
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+End If
+
+Exit_Command28_Click:
+    Exit Sub
+
+Err_Command28_Click:
+    MsgBox Err.Description
+    Resume Exit_Command28_Click
+    
+End Sub
+Private Sub Command29_Click()
+On Error GoTo Err_Command29_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, acUndo, , acMenuVer70
+
+Exit_Command29_Click:
+    Exit Sub
+
+Err_Command29_Click:
+    MsgBox Err.Description
+    Resume Exit_Command29_Click
+    
+End Sub
+Private Sub Command30_Click()
+On Error GoTo Err_Command30_Click
+
+
+    DoCmd.Close
+
+Exit_Command30_Click:
+    Exit Sub
+
+Err_Command30_Click:
+    MsgBox Err.Description
+    Resume Exit_Command30_Click
+    
+End Sub
+Private Sub Command31_Click()
+On Error GoTo Err_Command31_Click
+[Current Stock] = [Current Stock] + Quantity
+Receive = Receive + Quantity
+Payment = Payment + Text61
+Due = Due + Text63
+If Total_Amoun = 0 Then
+Text61 = 0
+Else
+Text63 = Total_Amoun - Text61
+Text61 = Null
+If Text61 = 0 Then
+MsgBox "Payment Can't Be Zero!!!", , "Data Entry Error"
+Text61.SetFocus
+End If
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+    End If
+Exit_Command31_Click:
+    Exit Sub
+
+Err_Command31_Click:
+    MsgBox Err.Description
+    Resume Exit_Command31_Click
+    
+End Sub
+Private Sub Command32_Click()
+On Error GoTo Err_Command32_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, acUndo, , acMenuVer70
+
+Exit_Command32_Click:
+    Exit Sub
+
+Err_Command32_Click:
+    MsgBox Err.Description
+    Resume Exit_Command32_Click
+    
+End Sub
+Private Sub Command33_Click()
+On Error GoTo Err_Command33_Click
+
+
+    DoCmd.Close
+
+Exit_Command33_Click:
+    Exit Sub
+
+Err_Command33_Click:
+    MsgBox Err.Description
+    Resume Exit_Command33_Click
+    
+End Sub
+Private Sub Command37_Click()
+On Error GoTo Err_Command37_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Stock"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command37_Click:
+    Exit Sub
+
+Err_Command37_Click:
+    MsgBox Err.Description
+    Resume Exit_Command37_Click
+    
+End Sub
+Private Sub Command38_Click()
+On Error GoTo Err_Command38_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Issue"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command38_Click:
+    Exit Sub
+
+Err_Command38_Click:
+    MsgBox Err.Description
+    Resume Exit_Command38_Click
+    
+End Sub
+
+Private Sub Quantity_BeforeUpdate(Cancel As Integer)
+
+End Sub
+
+Private Sub Text45_BeforeUpdate(Cancel As Integer)
+If Text45 = 0 Then
+Text47 = 0
+Else
+Text47 = Quantity * Text45
+End If
+End Sub
+
+Private Sub Retail_Price_BeforeUpdate(Cancel As Integer)
+If Retail_Price = 0 Then
+Total_Amoun = 0
+Else
+Text59 = Quantity * Retail_Price
+End If
+End Sub
+
+Private Sub SalesPrice_BeforeUpdate(Cancel As Integer)
+
+End Sub
+
+Private Sub Text59_BeforeUpdate(Cancel As Integer)
+
+End Sub
+
+Private Sub Text61_BeforeUpdate(Cancel As Integer)
+If Total_Amount = 0 Then
+Text61 = 0
+Else
+Text63 = Text59 - Text61
+End If
+End Sub
+
+Private Sub Text63_BeforeUpdate(Cancel As Integer)
+
+End Sub
+Private Sub Command65_Click()
+On Error GoTo Err_Command65_Click
+
+    Dim stDocName As String
+
+    stDocName = "Receive From"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_Command65_Click:
+    Exit Sub
+
+Err_Command65_Click:
+    MsgBox Err.Description
+    Resume Exit_Command65_Click
+    
+End Sub
+Private Sub Command68_Click()
+On Error GoTo Err_Command68_Click
+
+    Dim stDocName As String
+
+    stDocName = "All Receive"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_Command68_Click:
+    Exit Sub
+
+Err_Command68_Click:
+    MsgBox Err.Description
+    Resume Exit_Command68_Click
+    
+End Sub
+Private Sub Command69_Click()
+On Error GoTo Err_Command69_Click
+
+    Dim stDocName As String
+
+    stDocName = "Daily Receive"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command69_Click:
+    Exit Sub
+
+Err_Command69_Click:
+    MsgBox Err.Description
+    Resume Exit_Command69_Click
+    
+End Sub
+Private Sub Command70_Click()
+On Error GoTo Err_Command70_Click
+
+    Dim stDocName As String
+
+    stDocName = "Monthly Receive"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command70_Click:
+    Exit Sub
+
+Err_Command70_Click:
+    MsgBox Err.Description
+    Resume Exit_Command70_Click
+    
+End Sub
+Private Sub Command71_Click()
+On Error GoTo Err_Command71_Click
+
+    Dim stDocName As String
+
+    stDocName = "Yearly Receive"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command71_Click:
+    Exit Sub
+
+Err_Command71_Click:
+    MsgBox Err.Description
+    Resume Exit_Command71_Click
+    
+End Sub
+Private Sub Command72_Click()
+On Error GoTo Err_Command72_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command72_Click:
+    Exit Sub
+
+Err_Command72_Click:
+    MsgBox Err.Description
+    Resume Exit_Command72_Click
+    
+End Sub
+Private Sub Command74_Click()
+On Error GoTo Err_Command74_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Daily Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command74_Click:
+    Exit Sub
+
+Err_Command74_Click:
+    MsgBox Err.Description
+    Resume Exit_Command74_Click
+    
+End Sub
+Private Sub Command75_Click()
+On Error GoTo Err_Command75_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Monthly Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command75_Click:
+    Exit Sub
+
+Err_Command75_Click:
+    MsgBox Err.Description
+    Resume Exit_Command75_Click
+    
+End Sub
+Private Sub Command76_Click()
+On Error GoTo Err_Command76_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Yearly Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command76_Click:
+    Exit Sub
+
+Err_Command76_Click:
+    MsgBox Err.Description
+    Resume Exit_Command76_Click
+    
+End Sub

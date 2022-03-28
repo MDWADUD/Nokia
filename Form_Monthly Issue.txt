@@ -1,0 +1,34 @@
+Option Compare Database
+
+Private Sub Command3_Click()
+On Error GoTo Err_Command3_Click
+
+    Dim stDocName As String
+
+    stDocName = "Monthly Issue"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command3_Click:
+    Exit Sub
+
+Err_Command3_Click:
+    MsgBox Err.Description
+    Resume Exit_Command3_Click
+    
+End Sub
+Private Sub Command4_Click()
+On Error GoTo Err_Command4_Click
+
+    Dim stDocName As String
+
+    stDocName = "Monthly Issue Search By Model"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command4_Click:
+    Exit Sub
+
+Err_Command4_Click:
+    MsgBox Err.Description
+    Resume Exit_Command4_Click
+    
+End Sub

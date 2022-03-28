@@ -1,0 +1,87 @@
+Option Compare Database
+
+Private Sub Command8_Click()
+On Error GoTo Err_Command8_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command8_Click:
+    Exit Sub
+
+Err_Command8_Click:
+    MsgBox Err.Description
+    Resume Exit_Command8_Click
+    
+End Sub
+Private Sub Command10_Click()
+On Error GoTo Err_Command10_Click
+
+
+    DoCmd.GoToRecord , , acPrevious
+
+Exit_Command10_Click:
+    Exit Sub
+
+Err_Command10_Click:
+    MsgBox Err.Description
+    Resume Exit_Command10_Click
+    
+End Sub
+Private Sub Command11_Click()
+On Error GoTo Err_Command11_Click
+
+
+    DoCmd.GoToRecord , , acNext
+
+Exit_Command11_Click:
+    Exit Sub
+
+Err_Command11_Click:
+    MsgBox Err.Description
+    Resume Exit_Command11_Click
+    
+End Sub
+Private Sub Command12_Click()
+On Error GoTo Err_Command12_Click
+
+
+    DoCmd.Close
+
+Exit_Command12_Click:
+    Exit Sub
+
+Err_Command12_Click:
+    MsgBox Err.Description
+    Resume Exit_Command12_Click
+    
+End Sub
+Private Sub Command14_Click()
+On Error GoTo Err_Command14_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+
+Exit_Command14_Click:
+    Exit Sub
+
+Err_Command14_Click:
+    MsgBox Err.Description
+    Resume Exit_Command14_Click
+    
+End Sub
+Private Sub Command16_Click()
+On Error GoTo Err_Command16_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command16_Click:
+    Exit Sub
+
+Err_Command16_Click:
+    MsgBox Err.Description
+    Resume Exit_Command16_Click
+    
+End Sub

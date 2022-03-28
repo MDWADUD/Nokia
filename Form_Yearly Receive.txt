@@ -1,0 +1,34 @@
+Option Compare Database
+
+Private Sub Command0_Click()
+On Error GoTo Err_Command0_Click
+
+    Dim stDocName As String
+
+    stDocName = "Yearly Receive Search By Model"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command0_Click:
+    Exit Sub
+
+Err_Command0_Click:
+    MsgBox Err.Description
+    Resume Exit_Command0_Click
+    
+End Sub
+Private Sub Command1_Click()
+On Error GoTo Err_Command1_Click
+
+    Dim stDocName As String
+
+    stDocName = "Yearly Receive"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command1_Click:
+    Exit Sub
+
+Err_Command1_Click:
+    MsgBox Err.Description
+    Resume Exit_Command1_Click
+    
+End Sub

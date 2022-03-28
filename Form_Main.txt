@@ -1,0 +1,74 @@
+Option Compare Database
+
+Private Sub Command6_Click()
+On Error GoTo Err_Command6_Click
+
+    Dim stDocName As String
+
+    stDocName = "Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command6_Click:
+    Exit Sub
+
+Err_Command6_Click:
+    MsgBox Err.Description
+    Resume Exit_Command6_Click
+    
+End Sub
+Private Sub Command7_Click()
+On Error GoTo Err_Command7_Click
+
+    Dim stDocName As String
+
+    stDocName = "Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command7_Click:
+    Exit Sub
+
+Err_Command7_Click:
+    MsgBox Err.Description
+    Resume Exit_Command7_Click
+    
+End Sub
+
+Private Sub Command3_Click()
+If MsgBox("Are You Sure To Exit?", vbInformation + vbYesNo, "Nokia:Database") = vbYes Then
+DoCmd.Quit acQuitSaveAll
+End If
+End Sub
+Private Sub Command20_Click()
+On Error GoTo Err_Command20_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Purchase Company Name Entry"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command20_Click:
+    Exit Sub
+
+Err_Command20_Click:
+    MsgBox Err.Description
+    Resume Exit_Command20_Click
+    
+End Sub
+Private Sub Command21_Click()
+On Error GoTo Err_Command21_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Product Entry"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command21_Click:
+    Exit Sub
+
+Err_Command21_Click:
+    MsgBox Err.Description
+    Resume Exit_Command21_Click
+    
+End Sub

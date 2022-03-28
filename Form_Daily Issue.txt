@@ -1,0 +1,37 @@
+Option Compare Database
+
+Private Sub Command101_Click()
+
+End Sub
+Private Sub Command7_Click()
+On Error GoTo Err_Command7_Click
+
+    Dim stDocName As String
+
+    stDocName = "Daily Issue"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command7_Click:
+    Exit Sub
+
+Err_Command7_Click:
+    MsgBox Err.Description
+    Resume Exit_Command7_Click
+    
+End Sub
+Private Sub Command8_Click()
+On Error GoTo Err_Command8_Click
+
+    Dim stDocName As String
+
+    stDocName = "Daily Search By Model"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command8_Click:
+    Exit Sub
+
+Err_Command8_Click:
+    MsgBox Err.Description
+    Resume Exit_Command8_Click
+    
+End Sub

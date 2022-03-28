@@ -1,0 +1,702 @@
+Option Compare Database
+
+Private Sub Add_New_Item_Click()
+On Error GoTo Err_Add_New_Item_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Add_New_Item_Click:
+    Exit Sub
+
+Err_Add_New_Item_Click:
+    MsgBox Err.Description
+    Resume Exit_Add_New_Item_Click
+    
+End Sub
+Private Sub Save_Item_Click()
+On Error GoTo Err_Save_Item_Click
+If Issue = 0 Then
+If Receive = 0 Then
+[Current Stock] = [Opening Stock]
+End If
+End If
+
+
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+
+Exit_Save_Item_Click:
+    Exit Sub
+
+Err_Save_Item_Click:
+    MsgBox Err.Description
+    Resume Exit_Save_Item_Click
+    
+End Sub
+Private Sub Close_Click()
+On Error GoTo Err_Close_Click
+
+
+    DoCmd.Close
+
+Exit_Close_Click:
+    Exit Sub
+
+Err_Close_Click:
+    MsgBox Err.Description
+    Resume Exit_Close_Click
+    
+End Sub
+Private Sub Command22_Click()
+On Error GoTo Err_Command22_Click
+
+
+    DoCmd.GoToRecord , , acPrevious
+
+Exit_Command22_Click:
+    Exit Sub
+
+Err_Command22_Click:
+    MsgBox Err.Description
+    Resume Exit_Command22_Click
+    
+End Sub
+Private Sub Command23_Click()
+On Error GoTo Err_Command23_Click
+
+
+    DoCmd.GoToRecord , , acNext
+
+Exit_Command23_Click:
+    Exit Sub
+
+Err_Command23_Click:
+    MsgBox Err.Description
+    Resume Exit_Command23_Click
+    
+End Sub
+Private Sub Command24_Click()
+On Error GoTo Err_Command24_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command24_Click:
+    Exit Sub
+
+Err_Command24_Click:
+    MsgBox Err.Description
+    Resume Exit_Command24_Click
+    
+End Sub
+
+Private Sub Command26_Click()
+On Error GoTo Err_Save_Item_Click
+If Issue = 0 Then
+If Receive = 0 Then
+[Current Stock] = [Opening Stock]
+End If
+End If
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+End Sub
+
+Private Sub Command27_Click()
+On Error GoTo Err_Command27_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command27_Click:
+    Exit Sub
+
+Err_Command27_Click:
+    MsgBox Err.Description
+    Resume Exit_Command27_Click
+    
+End Sub
+Private Sub Command29_Click()
+On Error GoTo Err_Command29_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command29_Click:
+    Exit Sub
+
+Err_Command29_Click:
+    MsgBox Err.Description
+    Resume Exit_Command29_Click
+    
+End Sub
+Private Sub Command32_Click()
+On Error GoTo Err_Command32_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, acUndo, , acMenuVer70
+
+Exit_Command32_Click:
+    Exit Sub
+
+Err_Command32_Click:
+    MsgBox Err.Description
+    Resume Exit_Command32_Click
+    
+End Sub
+Private Sub Command34_Click()
+On Error GoTo Err_Command34_Click
+
+
+    DoCmd.Close
+
+Exit_Command34_Click:
+    Exit Sub
+
+Err_Command34_Click:
+    MsgBox Err.Description
+    Resume Exit_Command34_Click
+    
+End Sub
+Private Sub Command35_Click()
+On Error GoTo Err_Command35_Click
+
+If Issue = 0 Then
+If Receive = 0 Then
+[Current Stock] = [Opening Stock]
+End If
+If Payment = 0 Then
+Else
+Due = TotalAmount - Payment
+End If
+End If
+
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+
+Exit_Command35_Click:
+    Exit Sub
+
+Err_Command35_Click:
+    MsgBox Err.Description
+    Resume Exit_Command35_Click
+    
+End Sub
+Private Sub Command36_Click()
+On Error GoTo Err_Command36_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command36_Click:
+    Exit Sub
+
+Err_Command36_Click:
+    MsgBox Err.Description
+    Resume Exit_Command36_Click
+    
+End Sub
+Private Sub Command38_Click()
+On Error GoTo Err_Command38_Click
+
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command38_Click:
+    Exit Sub
+
+Err_Command38_Click:
+    MsgBox Err.Description
+    Resume Exit_Command38_Click
+    
+End Sub
+Private Sub Command40_Click()
+On Error GoTo Err_Command40_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, acUndo, , acMenuVer70
+
+Exit_Command40_Click:
+    Exit Sub
+
+Err_Command40_Click:
+    MsgBox Err.Description
+    Resume Exit_Command40_Click
+    
+End Sub
+Private Sub Command42_Click()
+On Error GoTo Err_Command42_Click
+
+
+    DoCmd.Close
+
+Exit_Command42_Click:
+    Exit Sub
+
+Err_Command42_Click:
+    MsgBox Err.Description
+    Resume Exit_Command42_Click
+    
+End Sub
+
+Private Sub Command109_Click()
+
+End Sub
+
+Private Sub Command47_Click()
+On Error GoTo Err_Command47_Click
+
+    Dim stDocName As String
+
+    stDocName = "Total Retail Price"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_Command47_Click:
+    Exit Sub
+
+Err_Command47_Click:
+    MsgBox Err.Description
+    Resume Exit_Command47_Click
+    
+End Sub
+Private Sub Command48_Click()
+On Error GoTo Err_Command48_Click
+
+    Dim stDocName As String
+
+    stDocName = "Total Sales  Price"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_Command48_Click:
+    Exit Sub
+
+Err_Command48_Click:
+    MsgBox Err.Description
+    Resume Exit_Command48_Click
+    
+End Sub
+Private Sub Command53_Click()
+On Error GoTo Err_Command53_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command53_Click:
+    Exit Sub
+
+Err_Command53_Click:
+    MsgBox Err.Description
+    Resume Exit_Command53_Click
+    
+End Sub
+Private Sub Command54_Click()
+On Error GoTo Err_Command54_Click
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Main"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command54_Click:
+    Exit Sub
+
+Err_Command54_Click:
+    MsgBox Err.Description
+    Resume Exit_Command54_Click
+    
+End Sub
+Private Sub Command55_Click()
+On Error GoTo Err_Command55_Click
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command55_Click:
+    Exit Sub
+
+Err_Command55_Click:
+    MsgBox Err.Description
+    Resume Exit_Command55_Click
+    
+End Sub
+
+Private Sub Command68_Click()
+
+End Sub
+
+Private Sub Command74_Click()
+
+End Sub
+
+Private Sub Command75_Click()
+
+End Sub
+
+Private Sub Retail_Price_BeforeUpdate(Cancel As Integer)
+If Retail_Price = 0 Then
+Else
+TotalAmount = Retail_Price * Opening_Stock
+End If
+End Sub
+Private Sub Command62_Click()
+On Error GoTo Err_Command62_Click
+
+    Dim stDocName As String
+
+    stDocName = "Stock Due"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_Command62_Click:
+    Exit Sub
+
+Err_Command62_Click:
+    MsgBox Err.Description
+    Resume Exit_Command62_Click
+    
+End Sub
+Private Sub Command76_Click()
+On Error GoTo Err_Command76_Click
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_Command76_Click:
+    Exit Sub
+
+Err_Command76_Click:
+    MsgBox Err.Description
+    Resume Exit_Command76_Click
+    
+End Sub
+Private Sub Command77_Click()
+On Error GoTo Err_Command77_Click
+If Issue = 0 Then
+If Receive = 0 Then
+[Current Stock] = [Opening Stock]
+End If
+If Payment = 0 Then
+Else
+Due = TotalAmount - Payment
+End If
+End If
+    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+
+Exit_Command77_Click:
+    Exit Sub
+
+Err_Command77_Click:
+    MsgBox Err.Description
+    Resume Exit_Command77_Click
+    
+End Sub
+Private Sub Command78_Click()
+On Error GoTo Err_Command78_Click
+
+
+    DoCmd.GoToRecord , , acPrevious
+
+Exit_Command78_Click:
+    Exit Sub
+
+Err_Command78_Click:
+    MsgBox Err.Description
+    Resume Exit_Command78_Click
+    
+End Sub
+Private Sub Command80_Click()
+On Error GoTo Err_Command80_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command80_Click:
+    Exit Sub
+
+Err_Command80_Click:
+    MsgBox Err.Description
+    Resume Exit_Command80_Click
+    
+End Sub
+Private Sub Command81_Click()
+On Error GoTo Err_Command81_Click
+
+
+    DoCmd.GoToRecord , , acNext
+
+Exit_Command81_Click:
+    Exit Sub
+
+Err_Command81_Click:
+    MsgBox Err.Description
+    Resume Exit_Command81_Click
+    
+End Sub
+Private Sub Command82_Click()
+On Error GoTo Err_Command82_Click
+
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command82_Click:
+    Exit Sub
+
+Err_Command82_Click:
+    MsgBox Err.Description
+    Resume Exit_Command82_Click
+    
+End Sub
+Private Sub Command83_Click()
+On Error GoTo Err_Command83_Click
+
+
+   DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_Command83_Click:
+    Exit Sub
+
+Err_Command83_Click:
+    MsgBox Err.Description
+    Resume Exit_Command83_Click
+    
+End Sub
+
+Private Sub TotalAmount_BeforeUpdate(Cancel As Integer)
+
+End Sub
+Private Sub Command99_Click()
+On Error GoTo Err_Command99_Click
+
+    Dim stDocName As String
+
+    stDocName = "Daily Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command99_Click:
+    Exit Sub
+
+Err_Command99_Click:
+    MsgBox Err.Description
+    Resume Exit_Command99_Click
+    
+End Sub
+Private Sub Command100_Click()
+On Error GoTo Err_Command100_Click
+
+    Dim stDocName As String
+
+    stDocName = "Monthly Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command100_Click:
+    Exit Sub
+
+Err_Command100_Click:
+    MsgBox Err.Description
+    Resume Exit_Command100_Click
+    
+End Sub
+Private Sub Command101_Click()
+On Error GoTo Err_Command101_Click
+
+    Dim stDocName As String
+
+    stDocName = "Yearly Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command101_Click:
+    Exit Sub
+
+Err_Command101_Click:
+    MsgBox Err.Description
+    Resume Exit_Command101_Click
+    
+End Sub
+Private Sub Command102_Click()
+On Error GoTo Err_Command102_Click
+
+    Dim stDocName As String
+
+    stDocName = "Daily Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command102_Click:
+    Exit Sub
+
+Err_Command102_Click:
+    MsgBox Err.Description
+    Resume Exit_Command102_Click
+    
+End Sub
+Private Sub Command103_Click()
+On Error GoTo Err_Command103_Click
+
+    Dim stDocName As String
+
+    stDocName = "Monthly Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command103_Click:
+    Exit Sub
+
+Err_Command103_Click:
+    MsgBox Err.Description
+    Resume Exit_Command103_Click
+    
+End Sub
+Private Sub Command104_Click()
+On Error GoTo Err_Command104_Click
+
+    Dim stDocName As String
+
+    stDocName = "Yearly Stock"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command104_Click:
+    Exit Sub
+
+Err_Command104_Click:
+    MsgBox Err.Description
+    Resume Exit_Command104_Click
+    
+End Sub
+Private Sub Command106_Click()
+On Error GoTo Err_Command106_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Daily Stock"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command106_Click:
+    Exit Sub
+
+Err_Command106_Click:
+    MsgBox Err.Description
+    Resume Exit_Command106_Click
+    
+End Sub
+Private Sub Command107_Click()
+On Error GoTo Err_Command107_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Monthly Stock"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command107_Click:
+    Exit Sub
+
+Err_Command107_Click:
+    MsgBox Err.Description
+    Resume Exit_Command107_Click
+    
+End Sub
+Private Sub Command108_Click()
+On Error GoTo Err_Command108_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Yearly Stock"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command108_Click:
+    Exit Sub
+
+Err_Command108_Click:
+    MsgBox Err.Description
+    Resume Exit_Command108_Click
+    
+End Sub
+Private Sub Command114_Click()
+On Error GoTo Err_Command114_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command114_Click:
+    Exit Sub
+
+Err_Command114_Click:
+    MsgBox Err.Description
+    Resume Exit_Command114_Click
+    
+End Sub
+Private Sub Command115_Click()
+On Error GoTo Err_Command115_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Daily Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command115_Click:
+    Exit Sub
+
+Err_Command115_Click:
+    MsgBox Err.Description
+    Resume Exit_Command115_Click
+    
+End Sub
+Private Sub Command116_Click()
+On Error GoTo Err_Command116_Click
+
+    Dim stDocName As String
+
+    stDocName = "All Receive"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_Command116_Click:
+    Exit Sub
+
+Err_Command116_Click:
+    MsgBox Err.Description
+    Resume Exit_Command116_Click
+    
+End Sub
+Private Sub Command118_Click()
+On Error GoTo Err_Command118_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Monthly Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command118_Click:
+    Exit Sub
+
+Err_Command118_Click:
+    MsgBox Err.Description
+    Resume Exit_Command118_Click
+    
+End Sub
+Private Sub Command119_Click()
+On Error GoTo Err_Command119_Click
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "Yearly Receive"
+    DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+Exit_Command119_Click:
+    Exit Sub
+
+Err_Command119_Click:
+    MsgBox Err.Description
+    Resume Exit_Command119_Click
+    
+End Sub

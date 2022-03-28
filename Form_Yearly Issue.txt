@@ -1,0 +1,34 @@
+Option Compare Database
+
+Private Sub Command1_Click()
+On Error GoTo Err_Command1_Click
+
+    Dim stDocName As String
+
+    stDocName = "Yearly Issue Search By Model"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command1_Click:
+    Exit Sub
+
+Err_Command1_Click:
+    MsgBox Err.Description
+    Resume Exit_Command1_Click
+    
+End Sub
+Private Sub Command2_Click()
+On Error GoTo Err_Command2_Click
+
+    Dim stDocName As String
+
+    stDocName = "Yearly Issue"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_Command2_Click:
+    Exit Sub
+
+Err_Command2_Click:
+    MsgBox Err.Description
+    Resume Exit_Command2_Click
+    
+End Sub
